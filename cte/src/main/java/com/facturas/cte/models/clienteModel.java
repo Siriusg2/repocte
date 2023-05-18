@@ -17,12 +17,14 @@ public class ClienteModel {
     @Column(name = "cliente_id", unique = true, updatable = false)
     private Long idCliente;
 
-    @Column(name = "cedula_ruc_cliente", unique = true)
+    @Column(name = "cedula_ruc_cliente", unique = true, nullable = false)
     private String identificacion;
+    @Column(name = "nombre_cliente", unique = true, nullable = false)
     private String nombre;
+    @Column(name = "direccion_cliente", unique = true, nullable = false)
     private String direccion;
     private String telefono;
-    @Column(name = "correo_cliente", unique = true)
+    @Column(name = "correo_cliente", unique = true, nullable = false)
     private String correo;
 
     @OneToMany(mappedBy = "cliente")

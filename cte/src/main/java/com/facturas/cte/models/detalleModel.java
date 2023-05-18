@@ -1,6 +1,7 @@
 package com.facturas.cte.models;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import javax.persistence.*;
 import lombok.*;
@@ -22,18 +23,21 @@ public class DetalleModel {
   )
   @Column(name = "detalle_id", unique = true, updatable = false)
   private Long idDetalle;
-
-  private BigDecimal cantidad;
-  private String unidadMedida;
-  private BigDecimal precio;
-  private BigDecimal iva;
+@Column(nullable = false)
+private BigDecimal cantidad;
+@Column(nullable = false)
+private String unidadMedida;
+@Column(nullable = false)
+private BigDecimal precio;
+@Column(nullable = false )
+private BigDecimal iva;
+@Column(nullable = false)
   private BigDecimal subtotal;
 
   @ManyToOne
   @JoinColumn(name = "factura_id")
   private FacturaModel detalles;
 
-  @ManyToOne
-  @JoinColumn(name = "producto_id")
-  private ProductoModel producto;
+  @OneToMany(mappedBy = "detalle_id")
+  private List<ProductoModel> productos;
 }

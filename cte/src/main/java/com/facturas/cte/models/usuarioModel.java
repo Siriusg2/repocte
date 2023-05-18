@@ -13,7 +13,13 @@ public class UsuarioModel {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "usuarios_sequence")
     @Column(name = "usuario_id", unique = true, updatable = false)
     private Long id;
-    private String nombre;
+
+    @Column(nullable = false, unique = true)
+    private String email;
+
+
+    @Column(nullable = false)
+    private String password;
     
 
 @ManyToOne

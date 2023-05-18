@@ -12,12 +12,17 @@ public class ProductoModel {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "productos_sequence")
     @Column(name = "producto_id", unique = true, updatable = false)
     private Long idProducto;
+    
+    @Column(nullable = false)
     private String codigo;
+    @Column(nullable = false)
     private String descripcion;
+    @Column(nullable = false)
     private String categoria;
 
 
-    @OneToMany(mappedBy = "producto")
+    @ManyToOne
+    @JoinColumn(name = "detalle_id")
     
-    private List<DetalleModel> detalle;
+    private List<DetalleModel> detalles;
 }

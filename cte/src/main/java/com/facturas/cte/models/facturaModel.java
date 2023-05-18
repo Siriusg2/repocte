@@ -34,9 +34,11 @@ public class FacturaModel {
     private Date fecha;
 
   
-    
+    @Column(nullable = false)
     private BigDecimal subtotal;
+    @Column(nullable = false)
     private BigDecimal totalIVA;
+    @Column(nullable = false)
     private BigDecimal total;
     
     

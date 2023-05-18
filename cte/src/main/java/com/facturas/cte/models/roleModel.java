@@ -17,7 +17,7 @@ public class RoleModel {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "roles_sequence")
     @Column(name = "role_id", unique = true, updatable = false)
     private Long id;
-    @Column(name = "role_name", unique = true)
+    @Column(name = "role_name", unique = true, nullable = false)
     private String nombre;
 
     @OneToMany(mappedBy = "role")
