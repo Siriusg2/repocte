@@ -11,7 +11,7 @@ import lombok.*;
 @Entity
 @Table(name = "clientes")
 @SequenceGenerator(name = "clientes_sequence", sequenceName = "clientes_sequence", allocationSize = 1)
-public class clienteModel {
+public class ClienteModel {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "clientes_sequence")
     @Column(name = "cliente_id", unique = true, updatable = false)
@@ -27,7 +27,7 @@ public class clienteModel {
 
     @OneToMany(mappedBy = "cliente")
     @JsonIgnore
-    private List<facturaModel> factura;
+    private List<FacturaModel> factura;
 
 
 }

@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "usuarios")
 @SequenceGenerator(name = "usuarios_sequence", sequenceName = "usuarios_sequence", allocationSize = 1)
-public class usuarioModel {
+public class UsuarioModel {
 
 
     @Id
@@ -18,5 +18,5 @@ public class usuarioModel {
 
 @ManyToOne
 @JoinColumn(name = "role_id")
-private roleModel role;
+private RoleModel role;
 }

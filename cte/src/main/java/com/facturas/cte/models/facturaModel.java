@@ -14,7 +14,7 @@ import lombok.*;
 @Entity
 @Table(name = "facturas")
 @SequenceGenerator(name = "facturas_sequence", sequenceName = "facturas_sequence", allocationSize = 1)
-public class facturaModel {
+public class FacturaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "facturas_sequence")
     @Column(name = "factura_id", unique = true, updatable = false)
@@ -41,9 +41,9 @@ public class facturaModel {
     
     
     @OneToMany(mappedBy = "detalles")
-    private List<detalleModel> detalles;
+    private List<DetalleModel> detalles;
 
     @ManyToOne
     @JoinColumn(name = "cliente_id")
-    private clienteModel cliente;
+    private ClienteModel cliente;
 }

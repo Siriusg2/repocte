@@ -13,7 +13,7 @@ import lombok.*;
   sequenceName = "detalles_sequence",
   allocationSize = 1
 )
-public class detalleModel {
+public class DetalleModel {
 
   @Id
   @GeneratedValue(
@@ -31,9 +31,9 @@ public class detalleModel {
 
   @ManyToOne
   @JoinColumn(name = "factura_id")
-  private facturaModel detalles;
+  private FacturaModel detalles;
 
   @ManyToOne
   @JoinColumn(name = "producto_id")
-  private productoModel producto;
+  private ProductoModel producto;
 }

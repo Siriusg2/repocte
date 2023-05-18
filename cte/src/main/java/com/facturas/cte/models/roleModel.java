@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "roles")
 @SequenceGenerator(name = "roles_sequence", sequenceName = "roles_sequence", allocationSize = 1)
-public class roleModel {
+public class RoleModel {
 
 
     @Id
@@ -21,6 +21,6 @@ public class roleModel {
     private String nombre;
 
     @OneToMany(mappedBy = "role")
-    private List<usuarioModel> usuarios;
+    private List<UsuarioModel> usuarios;
     
 }

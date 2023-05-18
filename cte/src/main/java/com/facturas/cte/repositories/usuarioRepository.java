@@ -1,7 +1,7 @@
 package com.facturas.cte.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.facturas.cte.models.*;
+import com.facturas.cte.models.UsuarioModel;
 
-public interface usuarioRepository extends JpaRepository<usuarioModel, Long> {
+public interface UsuarioRepository extends JpaRepository<UsuarioModel, Long> {
     
 }
