@@ -13,16 +13,15 @@ public class ProductoModel {
     @Column(name = "producto_id", unique = true, updatable = false)
     private Long idProducto;
     
-    @Column(nullable = false)
+    @Column(nullable = false , unique = true)
     private String codigo;
     @Column(nullable = false)
     private String descripcion;
     @Column(nullable = false)
     private String categoria;
-
-
-    @ManyToOne
-    @JoinColumn(name = "detalle_id")
     
+
+
+    @ManyToMany(mappedBy = "productos")
     private List<DetalleModel> detalles;
 }

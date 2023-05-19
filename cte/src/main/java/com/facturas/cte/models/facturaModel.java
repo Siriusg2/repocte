@@ -42,7 +42,7 @@ public class FacturaModel {
     private BigDecimal total;
     
     
-    @OneToMany(mappedBy = "detalles")
+    @OneToMany(mappedBy = "facturas")
     private List<DetalleModel> detalles;
 
     @ManyToOne

@@ -19,7 +19,7 @@ public class ClienteModel {
 
     @Column(name = "cedula_ruc_cliente", unique = true, nullable = false)
     private String identificacion;
-    @Column(name = "nombre_cliente", unique = true, nullable = false)
+    @Column(name = "nombre_cliente",  nullable = false)
     private String nombre;
     @Column(name = "direccion_cliente", unique = true, nullable = false)
     private String direccion;
@@ -29,7 +29,7 @@ public class ClienteModel {
 
     @OneToMany(mappedBy = "cliente")
     @JsonIgnore
-    private List<FacturaModel> factura;
+    private List<FacturaModel> facturas;
 
 
 }
