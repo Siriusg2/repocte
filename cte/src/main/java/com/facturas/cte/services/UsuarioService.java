@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public interface UsuarioService {
     List<UsuarioModel> getAllUsers() throws Exception;
 
-    UsuarioModel saveUser(UsuarioModel userData) throws Exception;
+    UsuarioModel saveUser(UsuarioModel userData, Long idCreator) throws Exception;
     Boolean deteteUser(Long idUser) throws Exception;
     UsuarioModel updateUser(Long idUser, UsuarioModel newUserData ) throws Exception;
 }

@@ -2,12 +2,17 @@ package com.facturas.cte.services.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.facturas.cte.models.ProductoModel;
+import com.facturas.cte.repositories.ProductoRepository;
 import com.facturas.cte.services.ProductoService;
 @Service
 public class ProductoServiceImpl implements ProductoService{
+
+    @Autowired
+    ProductoRepository productoRepository;
 
     @Override
     public List<ProductoModel> getAllFacturas() throws Exception {

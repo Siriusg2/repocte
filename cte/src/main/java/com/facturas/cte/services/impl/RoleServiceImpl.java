@@ -2,12 +2,17 @@ package com.facturas.cte.services.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.facturas.cte.models.RoleModel;
+import com.facturas.cte.repositories.RoleRepository;
 import com.facturas.cte.services.RoleService;
 @Service
 public class RoleServiceImpl  implements RoleService{
+
+    @Autowired 
+    RoleRepository roleRepository;
 
     @Override
     public List<RoleModel> getAllRoles() throws Exception {

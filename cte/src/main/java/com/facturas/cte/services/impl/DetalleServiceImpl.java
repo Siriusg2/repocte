@@ -1,11 +1,16 @@
 package com.facturas.cte.services.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.facturas.cte.models.DetalleModel;
+import com.facturas.cte.repositories.DetalleRepository;
 import com.facturas.cte.services.DetalleService;
 @Service
 public class DetalleServiceImpl implements DetalleService {
+
+@Autowired
+DetalleRepository detalleRepository;
 
     @Override
     public DetalleModel saveDetalle(DetalleModel requesBody) throws Exception {
