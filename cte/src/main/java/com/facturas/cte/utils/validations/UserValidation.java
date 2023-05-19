@@ -18,10 +18,12 @@ public class UserValidation {
 
 UsuarioModel existingUser = usuarioRepository.findByEmail(email);
 
+
+
 if(existingUser == null){
     throw new Exception("No existe un usuario registrado con ese correo electronico");
 }
-if(existingUser.getPassword() != password){
+if(!existingUser.getPassword().equals(password)){
     throw new Exception("La contraseña no es correcta");
 }
 

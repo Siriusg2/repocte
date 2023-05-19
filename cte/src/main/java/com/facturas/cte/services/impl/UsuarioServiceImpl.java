@@ -21,8 +21,15 @@ public class UsuarioServiceImpl implements UsuarioService{
     
     @Override
     public List<UsuarioModel> getAllUsers() throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllUsers'");
+       
+try {
+    List<UsuarioModel> allUsers = usuarioRepository.findAll();
+    return allUsers;
+} catch (Exception e) {
+  throw new Exception(e.getMessage());
+}
+
+
     }
 
     @Override
@@ -50,6 +57,18 @@ public class UsuarioServiceImpl implements UsuarioService{
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'updateUser'");
     }
+
+    @Override
+    public UsuarioModel login(String userEmail, String password) throws Exception {
+     
+userValidation.userValidationLogin(userEmail, password);
+
+  UsuarioModel user = usuarioRepository.findByEmail(userEmail);
+
+  return user;
+
+    }
+
 
 
     

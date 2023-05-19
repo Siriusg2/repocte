@@ -2,6 +2,8 @@ package com.facturas.cte.models;
 import lombok.*;
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.*;
+
 @Data
 @Entity
 @Table(name = "usuarios")
@@ -23,6 +25,7 @@ public class UsuarioModel {
     
 
 @ManyToOne
+@JsonManagedReference
 @JoinColumn(name = "role_id")
 private RoleModel role;
 }

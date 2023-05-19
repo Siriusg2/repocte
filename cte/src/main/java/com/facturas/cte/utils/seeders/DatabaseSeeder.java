@@ -89,7 +89,7 @@ public class DatabaseSeeder implements ApplicationRunner {
     ClienteModel client1 = new ClienteModel();
 
     client1.setIdentificacion("0963312441");
-    client1.setNombre("Carlos Bravo");
+    client1.setNombre("Daniel Puertas");
     client1.setDireccion("Gomez rendon #2016");
     client1.setTelefono("0982023693");
     client1.setCorreo("cliente1@example.com");
@@ -103,7 +103,7 @@ public class DatabaseSeeder implements ApplicationRunner {
     
     ClienteModel client3 = new ClienteModel();
     client3.setIdentificacion("0963314441");
-    client3.setNombre("Carlos Bravo");
+    client3.setNombre("Teresa Moron");
     client3.setDireccion("Gomez rendon #2017");
     client3.setTelefono("0982023693");
     client3.setCorreo("cliente3@example.com");
@@ -150,16 +150,16 @@ public void createProducts() {
     product9.setCodigo("a009");
     product10.setCodigo("a010");
 
-    product1.setDescripcion("a001");
-    product2.setDescripcion("a001");
-    product3.setDescripcion("a001");
-    product4.setDescripcion("a001");
-    product5.setDescripcion("a001");
-    product6.setDescripcion("a001");
-    product7.setDescripcion("a001");
-    product8.setDescripcion("a001");
-    product9.setDescripcion("a001");
-    product10.setDescripcion("a001");
+    product1.setDescripcion("Renueva tu hogar con este juego de sábanas de algodón de alta calidad. Suavidad y comodidad garantizadas para un descanso reparador. Incluye sábana ajustable, sábana plana y fundas de almohada. Dale un toque de estilo a tu dormitorio con este conjunto imprescindible.");
+    product2.setDescripcion("Eleva tu estilo con esta blusa de seda estampada. Diseño exclusivo y detalles delicados para un look único. Tejido de seda suave y ligero que te brinda lujo y comodidad. Ideal para ocasiones especiales o un toque de elegancia en tu día a día.");
+    product3.setDescripcion("Despierta la imaginación de tus hijos con este set de construcción. Piezas coloridas y versátiles para crear infinitas estructuras. Fomenta la creatividad y la destreza manual. Material seguro y resistente para horas de diversión sin preocupaciones.");
+    product4.setDescripcion("Disfruta de este delicioso chocolate con leche. Su sabor exquisito y textura cremosa te deleitarán en cada bocado. Ideal para satisfacer tus antojos y compartir momentos dulces con tus seres queridos.");
+    product5.setDescripcion("Ilumina tu sala de estar con estas modernas lámparas de mesa. Combina estilo y funcionalidad para crear un ambiente acogedor. Diseño elegante con base de metal resistente y pantalla de tela suave. Un complemento ideal para cualquier decoración.");
+    product6.setDescripcion("Actualiza tu armario con este abrigo de lana para mujer. Diseño clásico y atemporal para enfrentar el frío con estilo. Corte elegante que resalta tu figura y tejido de lana para abrigarte en los días más fríos. Una prenda versátil para lucir sofisticada en cualquier ocasión.");
+    product7.setDescripcion("Sorprende a tus hijos con este adorable peluche interactivo. Suave y mimoso compañero que habla, canta y baila. Sensor táctil para reaccionar a las caricias. Proporciona horas de entretenimiento y se convertirá en su mejor amigo.");
+    product8.setDescripcion("Prueba este nutritivo cereal de avena con frutas. Desayuno saludable y delicioso que te brinda energía para comenzar el día. Mezcla de sabores y texturas para una experiencia única. Cuida tu alimentación sin sacrificar el sabor.");
+    product9.setDescripcion("Despierta la creatividad y la diversión con este emocionante juego de construcción. Crea tus propios robots, naves espaciales y criaturas fantásticas con las piezas modulares. Desafía tu ingenio y desarrolla habilidades STEM mientras exploras un mundo de posibilidades. ¡Deja volar tu imaginación y diviértete construyendo aventuras sin límites!");
+    product10.setDescripcion("Expresa tu estilo con esta elegante chaqueta de cuero. Diseñada con atención a los detalles y fabricada con materiales de alta calidad, esta chaqueta te brinda un look sofisticado y a la moda. Combínala con jeans o una falda para lucir impresionante en cualquier ocasión. ¡Destaca entre la multitud con esta prenda única!");
 
   
 

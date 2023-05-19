@@ -6,6 +6,8 @@ import java.util.*;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.*;
+
 @Data
 @Entity
 @Table(name = "roles")
@@ -21,6 +23,7 @@ public class RoleModel {
     private String nombre;
 
     @OneToMany(mappedBy = "role")
+    @JsonBackReference
     private List<UsuarioModel> usuarios;
     
 }

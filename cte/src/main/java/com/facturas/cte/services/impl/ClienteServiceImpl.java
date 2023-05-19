@@ -15,8 +15,8 @@ public class ClienteServiceImpl implements ClienteService  {
 
     @Override
     public List<ClienteModel> getAllClients() throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllClients'");
+        return clienteRepository.findAll();
+
     }
 
     @Override

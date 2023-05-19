@@ -1,6 +1,9 @@
 package com.facturas.cte.models;
 import lombok.*;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.List;
 
 @Data
@@ -15,7 +18,7 @@ public class ProductoModel {
     
     @Column(nullable = false , unique = true)
     private String codigo;
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String descripcion;
     @Column(nullable = false)
     private String categoria;
@@ -23,5 +26,6 @@ public class ProductoModel {
 
 
     @ManyToMany(mappedBy = "productos")
+    @JsonIgnore
     private List<DetalleModel> detalles;
 }

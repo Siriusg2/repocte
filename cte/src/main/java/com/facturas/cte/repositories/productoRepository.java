@@ -6,5 +6,7 @@ import com.facturas.cte.models.ProductoModel;
 
 
 public interface ProductoRepository extends JpaRepository<ProductoModel, Long> {
+
+    ProductoModel findByCodigo(String productCode);
     
 }

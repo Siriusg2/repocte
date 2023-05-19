@@ -4,10 +4,9 @@ import java.util.List;
 import java.math.BigDecimal;
 import javax.persistence.*;
 
-import org.hibernate.annotations.CreationTimestamp;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import jakarta.validation.constraints.*;
 import lombok.*;
 
 @Data
@@ -24,13 +23,13 @@ public class FacturaModel {
 
 
     @Column(name = "num_factura", unique = true, updatable = false)
+    @Pattern(regexp = "\\d{3}-\\d{3}-\\d{9}", message = "El número de factura debe tener el formato correcto ej. 123-456-789012345")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String numeroFactura;
 
-
     @Column(name = "fecha_factura", unique = true, updatable = false)
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @CreationTimestamp
-    @Temporal(TemporalType.TIMESTAMP)
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    @PastOrPresent(message = "La fecha de la factura debe ser presente o pasada")
     private Date fecha;
 
   

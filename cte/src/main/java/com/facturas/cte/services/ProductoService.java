@@ -7,7 +7,7 @@ import com.facturas.cte.models.ProductoModel;
 
 @Service
 public interface ProductoService {
-    List<ProductoModel> getAllFacturas() throws Exception;
+    List<ProductoModel> getAllProducts() throws Exception;
     List<ProductoModel> getAllProductsByClientId(Long idClient) throws Exception;
 
     ProductoModel saveProduct(ProductoModel productData) throws Exception;
