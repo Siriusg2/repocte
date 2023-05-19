@@ -14,7 +14,7 @@ public class ProductValidations {
     ProductoRepository productoRepository;
 
 
-public Boolean validateNewProduct (ProductoModel productData) throws Exception {
+public void validateNewProduct (ProductoModel productData) throws Exception {
 
 
     String productCode = productData.getCodigo();
@@ -27,7 +27,7 @@ public Boolean validateNewProduct (ProductoModel productData) throws Exception {
             }
     }
 
-    return true;
+
 }
 
 }

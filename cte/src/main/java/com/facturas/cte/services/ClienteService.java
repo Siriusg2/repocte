@@ -9,7 +9,7 @@ import com.facturas.cte.models.ClienteModel;
 public interface ClienteService {
    List<ClienteModel> getAllClients() throws Exception;
 
-ClienteModel saveClient(ClienteModel requesBody) throws Exception;
+ClienteModel saveClient(ClienteModel clientData, Long roleIdCreator) throws Exception;
 Boolean deleteClient(Long requestParams) throws Exception;
 ClienteModel updateClient(Long clientId, ClienteModel newDataClient ) throws Exception;
 

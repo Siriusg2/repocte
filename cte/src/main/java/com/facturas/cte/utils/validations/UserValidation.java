@@ -14,7 +14,7 @@ public class UserValidation {
     @Autowired
     UsuarioRepository usuarioRepository;
 
-    public Boolean userValidationLogin(String email, String password) throws Exception{
+    public void userValidationLogin(String email, String password) throws Exception{
 
 UsuarioModel existingUser = usuarioRepository.findByEmail(email);
 
@@ -27,7 +27,7 @@ if(!existingUser.getPassword().equals(password)){
     throw new Exception("La contraseña no es correcta");
 }
 
-return true;
+
 }
 
 public Boolean userCreateValidation(Long creatorId)throws Exception{
