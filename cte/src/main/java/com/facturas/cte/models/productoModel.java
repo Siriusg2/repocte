@@ -21,11 +21,13 @@ public class ProductoModel {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String descripcion;
     @Column(nullable = false)
+    private String nombre;
+    @Column(nullable = false)
     private String categoria;
     
 
 
-    @ManyToMany(mappedBy = "productos")
+    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<DetalleModel> detalles;
 }

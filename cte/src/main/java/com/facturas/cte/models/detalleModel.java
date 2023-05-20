@@ -1,9 +1,12 @@
 package com.facturas.cte.models;
 
 import java.math.BigDecimal;
-import java.util.*;
+
 
 import javax.persistence.*;
+
+
+
 import lombok.*;
 
 @Data
@@ -34,15 +37,13 @@ private BigDecimal iva;
 @Column(nullable = false)
   private BigDecimal subtotal;
 
+
+
   @ManyToOne
   @JoinColumn(name = "factura_id")
-  private FacturaModel facturas;
+  private FacturaModel factura;
 
-  @ManyToMany
-  @JoinTable(
-    name = "detalle_producto",
-    joinColumns = @JoinColumn(name = "detalle_id"),
-    inverseJoinColumns = @JoinColumn(name = "producto_id")
-  )
-  private List<ProductoModel> productos;
+  @ManyToOne
+    @JoinColumn(name = "producto_id")
+    private ProductoModel producto;
 }

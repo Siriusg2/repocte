@@ -1,10 +1,12 @@
 package com.facturas.cte.models;
-import java.util.Date;
+import java.time.*;
 import java.util.List;
 import java.math.BigDecimal;
 import javax.persistence.*;
 
+
 import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 import jakarta.validation.constraints.*;
 import lombok.*;
@@ -24,13 +26,19 @@ public class FacturaModel {
 
     @Column(name = "num_factura", unique = true, updatable = false)
     @Pattern(regexp = "\\d{3}-\\d{3}-\\d{9}", message = "El número de factura debe tener el formato correcto ej. 123-456-789012345")
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private String numeroFactura;
+  
+    // @PrePersist
+    // private void generarNumeroFactura() {
+    //     NumFacturaGenerator generator = new NumFacturaGenerator();
+    //     String numeroFactura = generator.generarNumeroFactura();
+    //     this.numeroFactura = numeroFactura;
+    // }
 
-    @Column(name = "fecha_factura", unique = true, updatable = false)
+    @Column(name = "fecha_factura", updatable = false)
     @JsonFormat(pattern = "yyyy-MM-dd")
     @PastOrPresent(message = "La fecha de la factura debe ser presente o pasada")
-    private Date fecha;
+    private LocalDate fecha;
 
   
     @Column(nullable = false)
@@ -41,7 +49,7 @@ public class FacturaModel {
     private BigDecimal total;
     
     
-    @OneToMany(mappedBy = "facturas")
+    @OneToMany(mappedBy = "factura", cascade = CascadeType.ALL)
     private List<DetalleModel> detalles;
 
     @ManyToOne

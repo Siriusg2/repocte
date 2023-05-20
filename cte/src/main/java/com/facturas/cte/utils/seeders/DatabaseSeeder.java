@@ -150,6 +150,17 @@ public void createProducts() {
     product9.setCodigo("a009");
     product10.setCodigo("a010");
 
+    product1.setNombre("Juego de Sabanas");
+    product2.setNombre("Blusa de Seda");
+    product3.setNombre("Set de Construccion");
+    product4.setNombre("Lampara de Mesa");
+    product5.setNombre("Abrigo de Lana");
+    product6.setNombre("Peluche Interactivo");
+    product7.setNombre("Cereal con Frutas");
+    product8.setNombre("Juego de Construccion");
+    product9.setNombre("Juego de Construccion para adultos");
+    product10.setNombre("Chaqueta de Cuero");
+
     product1.setDescripcion("Renueva tu hogar con este juego de sábanas de algodón de alta calidad. Suavidad y comodidad garantizadas para un descanso reparador. Incluye sábana ajustable, sábana plana y fundas de almohada. Dale un toque de estilo a tu dormitorio con este conjunto imprescindible.");
     product2.setDescripcion("Eleva tu estilo con esta blusa de seda estampada. Diseño exclusivo y detalles delicados para un look único. Tejido de seda suave y ligero que te brinda lujo y comodidad. Ideal para ocasiones especiales o un toque de elegancia en tu día a día.");
     product3.setDescripcion("Despierta la imaginación de tus hijos con este set de construcción. Piezas coloridas y versátiles para crear infinitas estructuras. Fomenta la creatividad y la destreza manual. Material seguro y resistente para horas de diversión sin preocupaciones.");
