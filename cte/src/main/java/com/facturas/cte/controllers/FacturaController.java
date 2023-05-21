@@ -1,38 +1,34 @@
 package com.facturas.cte.controllers;
-import java.util.List;
 
+import com.facturas.cte.models.FacturaModel;
+import com.facturas.cte.services.FacturaService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.facturas.cte.models.FacturaModel;
-import com.facturas.cte.services.FacturaService;
-
 @RestController
 @RequestMapping("/facturas")
 public class FacturaController {
 
-    @Autowired
-    FacturaService facturaService;
-    
-@GetMapping("/get_all")
-public ResponseEntity <List<FacturaModel>> getAllFacturas ( ) throws Exception{
+  @Autowired
+  FacturaService facturaService;
 
-List<FacturaModel> allFacturas = facturaService.getAllFacturas();
+  @GetMapping("/get_all")
+  public ResponseEntity<List<FacturaModel>> getAllFacturas() throws Exception {
+    List<FacturaModel> allFacturas = facturaService.getAllFacturas();
 
-return ResponseEntity.status(HttpStatus.OK).body(allFacturas);
+    return ResponseEntity.status(HttpStatus.OK).body(allFacturas);
+  }
 
-}
+  @PostMapping("/create")
+  public ResponseEntity<FacturaModel> saveFactura(
+    @RequestBody FacturaModel facturaData
+  ) throws Exception {
+    // System.out.println(facturaData);
+    FacturaModel newFactura = facturaService.saveFactura(facturaData);
 
-@PostMapping("/create")
-
-public ResponseEntity<FacturaModel> saveFactura(@RequestBody FacturaModel facturaData) throws Exception{
-
-FacturaModel newFactura = facturaService.saveFactura(facturaData);
-
-return ResponseEntity.status(HttpStatus.CREATED).body(newFactura);
-
-} 
-
+    return ResponseEntity.status(HttpStatus.CREATED).body(newFactura);
+  }
 }

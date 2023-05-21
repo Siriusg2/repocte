@@ -6,7 +6,6 @@ import com.facturas.cte.repositories.FacturaRepository;
 import com.facturas.cte.services.FacturaService;
 import com.facturas.cte.utils.generators.NumFacturaGenerator;
 import com.facturas.cte.utils.validations.FacturaValidations;
-
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,16 +22,9 @@ public class FacturaServiceImpl implements FacturaService {
   @Autowired
   FacturaValidations facturaValidations;
 
-
-
-
   @Override
   public List<FacturaModel> getAllFacturas() throws Exception {
-
-
     List<FacturaModel> allFacturas = facturaRepository.findAll();
-
-
 
     return allFacturas;
   }
@@ -48,28 +40,20 @@ public class FacturaServiceImpl implements FacturaService {
 
   @Override
   public FacturaModel saveFactura(FacturaModel facturaData) throws Exception {
-NumFacturaGenerator generator = new NumFacturaGenerator();
+    NumFacturaGenerator generator = new NumFacturaGenerator();
 
-List<FacturaModel> allFacturas = facturaRepository.findAll();
+    List<FacturaModel> allFacturas = facturaRepository.findAll();
 
-String newNumberFact = generator.generarNumeroFactura(allFacturas);
+    String newNumberFact = generator.generarNumeroFactura(allFacturas);
 
-
-   facturaData.setNumeroFactura(newNumberFact);
-try {
-  
-  facturaValidations.validationSaveFactura(facturaData);
-  FacturaModel newFactura = facturaRepository
-.save(facturaData);
-return newFactura;
-} catch (Exception e) {
-throw new Exception(e.getMessage());
-}
-
-
-
-
-
+    facturaData.setNumeroFactura(newNumberFact);
+    try {
+      facturaValidations.validationSaveFactura(facturaData);
+      FacturaModel newFactura = facturaRepository.save(facturaData);
+      return newFactura;
+    } catch (Exception e) {
+      throw new Exception(e.getMessage());
+    }
   }
 
   @Override
