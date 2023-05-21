@@ -8,7 +8,11 @@ import closeSession from "./closeSession";
 
 function Navbar() {
   const navigate = useNavigate("");
-  const dataUser = JSON.parse(localStorage.getItem("userData")) || {};
+  const dataUser = JSON.parse(localStorage.getItem("userData")) || {
+    email: "",
+    password: "",
+    role: { id: "" },
+  };
   const [isHovered, setIsHovered] = useState({
     facturas: false,
     productos: false,

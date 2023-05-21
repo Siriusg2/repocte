@@ -6,8 +6,7 @@ import { useNavigate } from "react-router-dom";
 function LoginForm() {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({});
-  const navigate = useNavigate("");
-
+  const navigate = useNavigate();
   const handleChange = (event) => {
     const { name, value } = event.target;
     setCredentials((prevState) => ({
@@ -17,6 +16,7 @@ function LoginForm() {
 
     setErrors(validateLoginForm(credentials));
   };
+
   useEffect(() => {
     return () => setErrors(validateLoginForm(credentials));
   }, []);

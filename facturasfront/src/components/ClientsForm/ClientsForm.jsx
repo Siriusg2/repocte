@@ -1,7 +1,10 @@
 import { useState } from "react";
-import axios from "axios";
+import { useDispatch } from "react-redux";
+
+import { saveClient } from "../../redux/actions";
 
 const ClienteForm = () => {
+  const dispatch = useDispatch();
   const [clienteData, setClienteData] = useState({
     identificacion: "",
     nombre: "",
@@ -15,28 +18,23 @@ const ClienteForm = () => {
     setClienteData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e, clientData) => {
     e.preventDefault();
 
-    try {
-      const response = await axios.post("/customers/create", clienteData);
-      console.log(response.data);
+    await dispatch(saveClient(clientData));
 
-      // Limpiar el formulario después de guardar el cliente
-      setClienteData({
-        identificacion: "",
-        nombre: "",
-        direccion: "",
-        telefono: "",
-        correo: "",
-      });
-    } catch (error) {
-      console.error(error);
-    }
+    // Limpiar el formulario después de guardar el cliente
+    setClienteData({
+      identificacion: "",
+      nombre: "",
+      direccion: "",
+      telefono: "",
+      correo: "",
+    });
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={(e) => handleSubmit(e, clienteData)}>
       <label htmlFor="identificacion">Identificación</label>
       <input
         type="text"
