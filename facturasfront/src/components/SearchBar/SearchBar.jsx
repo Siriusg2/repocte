@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import styles from "./SearchBar.module.css";
 
 export default function SearchBar() {
-  const [game, setGame] = useState("");
+  const [product, setproduct] = useState("");
   // const allCharacters = useSelector((state) => state.allCharacters);
   const dispatch = useDispatch();
 
@@ -13,14 +13,14 @@ export default function SearchBar() {
   const onInput = (event) => {
     const value = event.target.value;
 
-    setGame(value);
+    setproduct(value);
   };
 
   const onClick = (word) => {
     if (!word) return dispatch();
     else {
       dispatch();
-      setGame("");
+      setproduct("");
     }
   };
 
@@ -32,21 +32,18 @@ export default function SearchBar() {
         onChange={onInput}
         className={styles.inputSearchBar}
         id="input"
-        value={game}
+        value={product}
       />
 
       <button
         className={styles.buttonSearch}
         onClick={() => {
-          game
-            ? onClick(game)
-            : alert("Please write a game name or a related word");
+          product
+            ? onClick(product)
+            : alert("Please write a product name or a related word");
         }}
       >
         Search
-      </button>
-      <button className={styles.buttonRandom} onClick={() => onClick()}>
-        Reset
       </button>
     </div>
   );

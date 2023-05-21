@@ -1,6 +1,12 @@
 import "bootstrap/dist/css/bootstrap.css";
 
-import { getAllClients, getAllFacturas, getAllProducts } from "./redux/actions";
+import {
+  getAllClients,
+  getAllFacturas,
+  getAllProducts,
+  getAllUsers,
+  getAllRoles,
+} from "./redux/actions";
 
 import Navbar from "./components/navabar/Navbar";
 import LoginForm from "./components/loginform/Loginform";
@@ -24,6 +30,8 @@ function App() {
     dispatch(getAllClients());
     dispatch(getAllProducts());
     dispatch(getAllFacturas());
+    dispatch(getAllUsers());
+    dispatch(getAllRoles());
     if (!contition) navigate("/");
   }, []);
   return (

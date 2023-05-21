@@ -1,6 +1,0 @@
-.container {
-    border: 5px solid red;
-    display: flex;
-    flex-direction: row-reverse wrap;
-    width: 100%;
-}

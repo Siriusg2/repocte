@@ -3,9 +3,10 @@ import axios from "axios";
 
 const ProductoForm = () => {
   const [productData, setProductData] = useState({
-    name: "",
-    price: "",
-    quantity: "",
+    codigo: "",
+    descripcion: "",
+    nombre: "",
+    categoria: "",
   });
 
   const handleChange = (e) => {
@@ -21,7 +22,12 @@ const ProductoForm = () => {
       console.log(response.data);
 
       // Limpiar el formulario después de guardar el producto
-      setProductData({ name: "", price: "", quantity: "" });
+      setProductData({
+        codigo: "",
+        descripcion: "",
+        nombre: "",
+        categoria: "",
+      });
     } catch (error) {
       console.error(error);
     }
@@ -29,30 +35,38 @@ const ProductoForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Name</label>
+      <label htmlFor="codigo">Código</label>
       <input
         type="text"
-        id="name"
-        name="name"
-        value={productData.name}
+        id="codigo"
+        name="codigo"
+        value={productData.codigo}
         onChange={handleChange}
       />
 
-      <label htmlFor="price">Price</label>
-      <input
-        type="number"
-        id="price"
-        name="price"
-        value={productData.price}
+      <label htmlFor="descripcion">Descripción</label>
+      <textarea
+        id="descripcion"
+        name="descripcion"
+        value={productData.descripcion}
         onChange={handleChange}
       />
 
-      <label htmlFor="quantity">Quantity</label>
+      <label htmlFor="nombre">Nombre</label>
       <input
-        type="number"
-        id="quantity"
-        name="quantity"
-        value={productData.quantity}
+        type="text"
+        id="nombre"
+        name="nombre"
+        value={productData.nombre}
+        onChange={handleChange}
+      />
+
+      <label htmlFor="categoria">Categoría</label>
+      <input
+        type="text"
+        id="categoria"
+        name="categoria"
+        value={productData.categoria}
         onChange={handleChange}
       />
 

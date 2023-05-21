@@ -4,6 +4,8 @@ const initialState = {
   allFacturas: [],
   allProducts: [],
   allClients: [],
+  allUsers: [],
+  allRoles: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -12,6 +14,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         allFacturas: action.payload,
+      };
+    case actions.GET_ROLES:
+      return {
+        ...state,
+        allRoles: action.payload,
       };
     case actions.CREATE_FACTURA:
       return {
@@ -38,6 +45,16 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         allProducts: [...state.allProducts, action.payload],
+      };
+    case actions.GET_USERS:
+      return {
+        ...state,
+        allUsers: action.payload,
+      };
+    case actions.CREATE_USER:
+      return {
+        ...state,
+        allUsers: [...state.allUsers, action.payload],
       };
 
     default:
