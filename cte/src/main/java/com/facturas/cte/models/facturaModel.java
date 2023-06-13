@@ -2,7 +2,6 @@ package com.facturas.cte.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.*;
-import java.math.BigDecimal;
 import java.time.*;
 import java.util.List;
 import javax.persistence.*;
